@@ -101,17 +101,17 @@ const CountdownTimer: React.FC = () => {
 
     const TimerBox = ({ value, label }: { value: number; label: string }) => (
         <div className="flex flex-col items-center">
-            <div className="text-2xl md:text-3xl font-bold font-display text-gold-main bg-gray-dark/50 rounded-md px-3 py-1">{String(value).padStart(2, '0')}</div>
+            <div className="text-2xl font-bold font-display text-gold-main bg-gray-dark/50 rounded-md px-3 py-1">{String(value).padStart(2, '0')}</div>
             <div className="text-xs uppercase tracking-widest mt-1">{label}</div>
         </div>
     );
 
     return (
-        <div className="flex items-center space-x-3 md:space-x-4">
+        <div className="flex items-center space-x-2 md:space-x-4">
             <TimerBox value={timeLeft.hours} label="Horas" />
-            <span className="text-3xl font-bold text-gold-main">:</span>
+            <span className="text-2xl font-bold text-gold-main">:</span>
             <TimerBox value={timeLeft.minutes} label="Min" />
-            <span className="text-3xl font-bold text-gold-main">:</span>
+            <span className="text-2xl font-bold text-gold-main">:</span>
             <TimerBox value={timeLeft.seconds} label="Seg" />
         </div>
     );
@@ -121,7 +121,7 @@ const CountdownTimer: React.FC = () => {
 const Header: React.FC = () => (
     <header className="fixed top-0 left-0 right-0 z-50 bg-black-main/80 backdrop-blur-sm border-b border-gray-dark/50 shadow-lg">
         <div className="container mx-auto px-6 py-2 flex justify-center items-center text-center">
-            <div className="flex items-center space-x-4 text-sm md:text-base">
+            <div className="flex items-center space-x-4 text-sm">
                 <p className="hidden sm:block">Essa oferta vai sumir em...</p>
                 <p className="block sm:hidden">Oferta acaba em...</p>
                 <CountdownTimer />
@@ -253,7 +253,7 @@ const ValueSection: React.FC = () => (
                 <p className="text-lg mt-4 text-white/80">Você não vai pagar nem perto disso.</p>
                 <div className="my-8">
                     <p className="text-sm uppercase tracking-widest text-white/70">Acesso Imediato Por Apenas</p>
-                    <p className="font-display font-bold text-7xl text-gold-main my-2">R$47,90</p>
+                    <p className="font-display font-bold text-6xl md:text-7xl text-gold-main my-2">R$47,90</p>
                     <p className="text-sm text-white/70">(Pagamento único)</p>
                 </div>
                 <CTAButton>EU QUERO ESSE DESCONTO</CTAButton>
@@ -378,7 +378,7 @@ const GuaranteeSection: React.FC = () => (
                 <GuaranteeSealIcon className="animate-spin-slow flex-shrink-0"/>
                 <div>
                     <h2 className="text-3xl md:text-4xl font-display font-bold">Garantia Blindada de Risco Zero</h2>
-                    <p className="text-2xl font-bold mt-4 text-gold-main">"Se aplicar tudo e não vender, devolvo seu dinheiro + R$200 no seu bolso."</p>
+                    <p className="text-xl md:text-2xl font-bold mt-4 text-gold-main">"Se aplicar tudo e não vender, devolvo seu dinheiro + R$200 no seu bolso."</p>
                     <p className="text-white/70 mt-4">É simples. Você tem 30 dias para aplicar o método. Se seguir o passo a passo e, mesmo assim, não realizar nenhuma venda, eu não só devolvo 100% do seu investimento de R$47,90, como também te envio um PIX de R$200 pelo seu tempo. O risco é todo meu.</p>
                 </div>
             </div>
@@ -416,11 +416,11 @@ const Footer: React.FC = () => (
         <div className="container mx-auto px-6 text-center text-sm text-white/50">
             <p>Copyright © {new Date().getFullYear()} - Máquina de Vendas IA. Todos os direitos reservados.</p>
             <p className="mt-2">CNPJ Fictício: 33.041.260/0652-90</p>
-            <div className="flex justify-center space-x-4 mt-4">
+            <div className="flex flex-col sm:flex-row justify-center items-center space-y-2 sm:space-y-0 sm:space-x-4 mt-4">
                 <a href="#" className="hover:text-gold-main transition-colors">Garantia de 30 dias</a>
-                <span>|</span>
+                <span className="hidden sm:inline">|</span>
                 <a href="#" className="hover:text-gold-main transition-colors">Contato por E-mail</a>
-                <span>|</span>
+                <span className="hidden sm:inline">|</span>
                 <a href="#" className="hover:text-gold-main transition-colors">Política de Reembolso</a>
             </div>
         </div>
